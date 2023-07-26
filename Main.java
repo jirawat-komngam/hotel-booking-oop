@@ -62,6 +62,8 @@ class program {
                 System.out.println("Room Type:Sweet f**k (500.0 bath/day");
                 System.out.println("Night:0");
                 System.out.println("Price:0.0baht");
+                System.out.println("VAT (7%):0.0baht");
+                System.out.println("Total Price:0.0Baht");
             }
         } else if (input1.equals("2")) {
             System.out.println("register");
