@@ -2,8 +2,11 @@ import java.util.Scanner;
 
 public class LoginOfficer implements Officer {
     private Scanner ear;
+    private UserDB userDB;
 
-    LoginOfficer() {
+    LoginOfficer(UserDB realUserDB) {
+        ear = new Scanner(System.in);
+        userDB = realUserDB;
     }
 
     public void call() {
