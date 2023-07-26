@@ -10,10 +10,20 @@ public class LoginOfficer implements Officer {
     }
 
     public void call() {
+        String realPasswordInput = "";
         System.out.println("login");
         System.out.println("-username");
         String userName = ear.nextLine();
-        System.out.println("password");
-        String password = ear.nextLine();
+        for (userPOJO eachUser : userDB.getUserList()) {
+            if (eachUser.getUserInfo().containsKey(userName) == true) {
+                System.out.println("password");
+                String password = ear.nextLine();
+                realPasswordInput = eachUser.getUserInfo().get(userName);
+                if (password.equals(realPasswordInput)) {
+                    System.out.println("login success");
+                }
+            }
+        }
+
     }
 }
