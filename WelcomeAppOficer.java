@@ -2,11 +2,13 @@ import java.util.Scanner;
 
 public class WelcomeAppOficer implements Officer {
     private Scanner ear;
+    private LoginOfficer loginOfficer;
     private RegisterOfficer registerOfficer;
 
-    WelcomeAppOficer(RegisterOfficer realRegisterOfficer) {
+    WelcomeAppOficer(RegisterOfficer realRegisterOfficer, LoginOfficer realLoginOfficer) {
         ear = new Scanner(System.in);
         registerOfficer = realRegisterOfficer;
+        loginOfficer = realLoginOfficer;
     }
 
     public void call() {
@@ -22,7 +24,8 @@ public class WelcomeAppOficer implements Officer {
 
     public void dicision(String userword) {
         if (userword.equals("1")) {
-            System.out.println("login");
+            loginOfficer.call();
+
         } else if (userword.equals("2")) {
             registerOfficer.call();
         }
