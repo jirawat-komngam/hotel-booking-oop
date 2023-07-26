@@ -1,25 +1,32 @@
+import java.time.ZonedDateTime;
+import java.util.Map;
 import java.util.Scanner;
 
 class ListRoomOfficer {
     private Scanner ear;
 
+    ListRoomOfficer() {
+        ear = new Scanner(System.in);
+    }
+
     public void call(String userName, String fullName, HotelPOJO selectedHotel) {
         int countRoom = 1;
+        System.out.println("hotel : " + selectedHotel.getHotelName());
+        System.out.println("Room");
         for (RoomPOJO eachRoom : selectedHotel.getRoom()) {
-            System.out.println("hotel : " + selectedHotel.getHotelName());
-            System.out.println("Room");
             System.out.println(countRoom + " " + eachRoom.getRoomType() + " " + eachRoom.getRoomPrice() + "  baht");
+            countRoom++;
         }
-
-        System.out.println("1 cheep 500");
-        System.out.println("2 normal 1000");
-        System.out.println("3 deluxe 5000");
         System.out.println("Choose room id:");
         String roomInput = ear.nextLine();
+        int roomID = Integer.parseInt(roomInput);
+        RoomPOJO selectedRoom = selectedHotel.getRoom().get(roomID - 1);
         System.out.println("Available Date");
-        System.out.println("1: 2023-06-29T00:00Z[UTC]");
-        System.out.println("2: 2023-06-28T00:00Z[UTC]");
-        System.out.println("3: 2023-06-30T00:00Z[UTC]");
+        int countDate = 1;
+        for (Map.Entry<ZonedDateTime, Boolean> entry : selectedRoom.getRoomAvailiabledates().entrySet()) {
+            System.out.println(countDate + " " + entry.getKey());
+            countDate++;
+        }
         System.out.println("from");
         String datefromInput = ear.nextLine();
         System.out.println("to");
