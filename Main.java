@@ -3,6 +3,7 @@ import java.util.Scanner;
 class program {
 
     public void app() {
+
     }
 
     public void hardcode() {
