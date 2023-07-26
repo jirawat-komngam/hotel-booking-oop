@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class WelcomeAppOficer {
+public class WelcomeAppOficer implements Officer {
     private Scanner ear;
 
     WelcomeAppOficer() {
@@ -14,6 +14,10 @@ public class WelcomeAppOficer {
     }
 
     public void dicision(String userword) {
-
+        if (userword.equals("1")) {
+            System.out.println("login");
+        } else if (userword.equals("2")) {
+            System.out.println("login");
+        }
     }
 }
