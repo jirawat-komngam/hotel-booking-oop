@@ -14,7 +14,10 @@ public class HotelContainer {
 
     public void load() {
 
-        CityData bangkok = new CityData("bangkok", "thailand", new ArrayList<>());
+        CityData bangkok = new CityData(null, "thailand", null);
+        Map bangkokName = new HashMap<String, Boolean>();
+        bangkokName.put("bangkok", true);
+        bangkok.setCityName(bangkokName);
         List<HotelPOJO> hotelList = new ArrayList<HotelPOJO>();
         HotelPOJO baiyoke = new HotelPOJO("Baiyoke Sky Hotel Restaurant Buffet ", 300.0, new ArrayList<>());
         List<RoomPOJO> baiyokeRoomList = new ArrayList<RoomPOJO>();
