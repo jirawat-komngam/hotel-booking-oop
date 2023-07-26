@@ -1,9 +1,11 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 class program {
 
     public void app() {
-        RegisterOfficer newRegisterOfficer = new RegisterOfficer();
+        UserDB newuserDB = new UserDB(new ArrayList<>());
+        RegisterOfficer newRegisterOfficer = new RegisterOfficer(newuserDB);
         WelcomeAppOficer newWelcomeAppOficer = new WelcomeAppOficer(newRegisterOfficer);
         newWelcomeAppOficer.call();
     }
