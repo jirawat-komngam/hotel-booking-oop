@@ -1,21 +1,23 @@
 import java.util.List;
+import java.util.Map;
 
 public class CityData {
-    public CityData(String cityName, String country, List<HotelPOJO> hotelList) {
+
+    public CityData(Map<String, Boolean> cityName, String country, List<HotelPOJO> hotelList) {
         this.cityName = cityName;
         this.country = country;
         this.hotelList = hotelList;
     }
 
-    private String cityName;
+    private Map<String, Boolean> cityName;
     private String country;
     private List<HotelPOJO> hotelList;
 
-    public String getCityName() {
+    public Map<String, Boolean> getCityName() {
         return cityName;
     }
 
-    public void setCityName(String cityName) {
+    public void setCityName(Map<String, Boolean> cityName) {
         this.cityName = cityName;
     }
 
@@ -34,4 +36,5 @@ public class CityData {
     public void setHotelList(List<HotelPOJO> hotelList) {
         this.hotelList = hotelList;
     }
+
 }
