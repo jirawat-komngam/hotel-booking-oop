@@ -31,16 +31,16 @@ public class ListHotelOfficer {
         int countHotel = 1;
         for (HotelPOJO eachHotel : selectedCity.getHotelList()) {
             for (Map.Entry<String, Boolean> entry : selectedCity.getCityName().entrySet()) {
-                System.out.println("city :" + entry.getKey());
+                System.out.println("city : " + entry.getKey());
 
             }
             System.out.println("hotellist");
             System.out.println(
                     countHotel + " " + eachHotel.getHotelName() + " " + eachHotel.getHotelMinPrice() + "baht");
         }
-        String selectedHotel = ear.nextLine();
-        int hotelID = Integer.parseInt(selectedHotel);
-
+        String selectedHotelInput = ear.nextLine();
+        int hotelID = Integer.parseInt(selectedHotelInput);
+        HotelPOJO selectedHotel = selectedCity.getHotelList().get(hotelID);
     }
 
 }
