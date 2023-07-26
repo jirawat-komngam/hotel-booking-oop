@@ -5,8 +5,9 @@ class program {
 
     public void app() {
         UserDB newuserDB = new UserDB(new ArrayList<>());
+        LoginOfficer newLoginOfficer = new LoginOfficer(newuserDB);
         RegisterOfficer newRegisterOfficer = new RegisterOfficer(newuserDB);
-        WelcomeAppOficer newWelcomeAppOficer = new WelcomeAppOficer(newRegisterOfficer);
+        WelcomeAppOficer newWelcomeAppOficer = new WelcomeAppOficer(newRegisterOfficer, newLoginOfficer);
         newWelcomeAppOficer.call();
     }
 
