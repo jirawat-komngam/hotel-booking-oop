@@ -22,7 +22,7 @@ public class LoginOfficer implements Officer {
                 String password = ear.nextLine();
                 realPasswordInput = eachUser.getUserInfo().get(userName);
                 if (password.equals(realPasswordInput)) {
-                    System.out.println("login success");
+                    listHotelOfficer.call();
                 } else {
                     System.out.println("wrong password");
                 }
