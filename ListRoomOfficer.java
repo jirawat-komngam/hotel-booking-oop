@@ -4,8 +4,13 @@ class ListRoomOfficer {
     private Scanner ear;
 
     public void call(String userName, String fullName, HotelPOJO selectedHotel) {
-        System.out.println("hotel : asdsa");
-        System.out.println("Room");
+        int countRoom = 1;
+        for (RoomPOJO eachRoom : selectedHotel.getRoom()) {
+            System.out.println("hotel : " + selectedHotel.getHotelName());
+            System.out.println("Room");
+            System.out.println(countRoom + " " + eachRoom.getRoomType() + " " + eachRoom.getRoomPrice() + "  baht");
+        }
+
         System.out.println("1 cheep 500");
         System.out.println("2 normal 1000");
         System.out.println("3 deluxe 5000");
