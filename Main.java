@@ -3,7 +3,9 @@ import java.util.Scanner;
 class program {
 
     public void app() {
-
+        RegisterOfficer newRegisterOfficer = new RegisterOfficer();
+        WelcomeAppOficer newWelcomeAppOficer = new WelcomeAppOficer(newRegisterOfficer);
+        newWelcomeAppOficer.call();
     }
 
     public void hardcode() {
@@ -100,6 +102,6 @@ class program {
 public class Main {
     public static void main(String[] args) {
         program newprog = new program();
-        newprog.hardcode();
+        newprog.app();
     }
 }
