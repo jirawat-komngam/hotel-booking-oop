@@ -2,9 +2,13 @@ import java.util.Scanner;
 
 public class ListHotelOfficer {
     private Scanner ear;
+    private HotelDB hotelDB;
+    private HotelContainer hotelContainer;
 
-    ListHotelOfficer() {
+    ListHotelOfficer(HotelDB realHotelDB, HotelContainer realHotelContainer) {
         ear = new Scanner(System.in);
+        hotelDB = realHotelDB;
+        hotelContainer = realHotelContainer;
     }
 
     public void call() {
@@ -12,11 +16,18 @@ public class ListHotelOfficer {
         System.out.println("- search destination");
         System.out.println("- write city name");
         String cityNameInput = ear.nextLine();
-        System.out.println("bangkok");
-        System.out.println("hotellist");
-        System.out.println("1 asdsa hotel 5stars 500 baht");
-        System.out.println("2 asrr hotel 3stars 100 baht");
-        System.out.println("3 wew  hotel 4 stars 250 baht");
-        String hotelInput = ear.nextLine();
+        hotelContainer.load();
+        for (CityData eachCity : hotelDB.getCityData()) {
+            if (eachCity.getCityName().containsKey(cityNameInput)) {
+                int countHotel = 1;
+                for (HotelPOJO eachHotel : eachCity.getHotelList()) {
+                    System.out.println(cityNameInput);
+                    System.out.println("hotellist");
+                    System.out.println(
+                            countHotel + " " + eachHotel.getHotelName() + " " + eachHotel.getHotelMinPrice() + "baht");
+                }
+            }
+        }
+
     }
 }
