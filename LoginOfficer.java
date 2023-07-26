@@ -21,8 +21,9 @@ public class LoginOfficer implements Officer {
                 System.out.println("password");
                 String password = ear.nextLine();
                 realPasswordInput = eachUser.getUserInfo().get(userName);
+                String fullName = eachUser.getFullName();
                 if (password.equals(realPasswordInput)) {
-                    listHotelOfficer.call();
+                    listHotelOfficer.call(userName, fullName);
                 } else {
                     System.out.println("wrong password");
                 }
