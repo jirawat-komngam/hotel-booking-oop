@@ -7,7 +7,8 @@ class program {
         UserDB newuserDB = new UserDB(new ArrayList<>());
         HotelDB realHotelDB = new HotelDB(new ArrayList<>());
         HotelContainer hotelContainer = new HotelContainer(realHotelDB);
-        ListHotelOfficer newListHotelOfficer = new ListHotelOfficer(realHotelDB, hotelContainer);
+        ListRoomOfficer newListRoomOfficer = new ListRoomOfficer();
+        ListHotelOfficer newListHotelOfficer = new ListHotelOfficer(realHotelDB, hotelContainer, newListRoomOfficer);
         LoginOfficer newLoginOfficer = new LoginOfficer(newuserDB, newListHotelOfficer);
         RegisterOfficer newRegisterOfficer = new RegisterOfficer(newuserDB);
         WelcomeAppOficer newWelcomeAppOficer = new WelcomeAppOficer(newRegisterOfficer, newLoginOfficer);
