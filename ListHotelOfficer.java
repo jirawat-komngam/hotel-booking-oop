@@ -5,11 +5,13 @@ public class ListHotelOfficer {
     private Scanner ear;
     private HotelDB hotelDB;
     private HotelContainer hotelContainer;
+    private ListRoomOfficer listRoomOfficer;
 
-    ListHotelOfficer(HotelDB realHotelDB, HotelContainer realHotelContainer) {
+    ListHotelOfficer(HotelDB realHotelDB, HotelContainer realHotelContainer, ListRoomOfficer reallistRoomOfficer) {
         ear = new Scanner(System.in);
         hotelDB = realHotelDB;
         hotelContainer = realHotelContainer;
+        listRoomOfficer = reallistRoomOfficer;
     }
 
     public void call(String userName, String fullName) {
@@ -41,7 +43,6 @@ public class ListHotelOfficer {
         }
         String selectedHotelInput = ear.nextLine();
         int hotelID = Integer.parseInt(selectedHotelInput);
-        HotelPOJO selectedHotel = selectedCity.getHotelList().get(hotelID);
 
     }
 
