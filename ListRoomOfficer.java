@@ -31,6 +31,28 @@ class ListRoomOfficer {
         String datefromInput = ear.nextLine();
         System.out.println("to");
         String datetoInput = ear.nextLine();
+        int fromDateID = Integer.parseInt(datefromInput);
+        int toDateID = Integer.parseInt(datetoInput);
+        ZonedDateTime selectFromDate = null;
+        int countFromDate = 1;
+        for (Map.Entry<ZonedDateTime, Boolean> entry : selectedRoom.getRoomAvailiabledates().entrySet()) {
+            if (fromDateID == countFromDate) {
+                selectFromDate = entry.getKey();
+                break;
+
+            }
+            countFromDate++;
+        }
+        ZonedDateTime selectToDate = null;
+        int countToDate = 1;
+        for (Map.Entry<ZonedDateTime, Boolean> entry : selectedRoom.getRoomAvailiabledates().entrySet()) {
+            if (toDateID == countToDate) {
+                selectFromDate = entry.getKey();
+                break;
+
+            }
+            countToDate++;
+        }
         System.out.println("Summary");
         System.out.println("name (fullname)");
         System.out.println("city bangkok");
