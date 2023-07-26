@@ -27,6 +27,7 @@ public class RegisterOfficer implements Officer {
             userPOJO newUser = new userPOJO(null, fullName, new ArrayList<>());
             Map userInfo = new HashMap<String, String>();
             userInfo.put(userName, password);
+            newUser.setUserInfo(userInfo);
             userDB.getUserList().add(newUser);
         } else {
             System.out.println("your confirm password is incorect");
