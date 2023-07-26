@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 public class HotelContainer {
-    private CityData cityData;
+    private HotelDB hotelDB;
 
-    HotelContainer(CityData realCityData) {
-        cityData = realCityData;
+    HotelContainer(HotelDB realhotelDB) {
+        hotelDB = realhotelDB;
     }
 
     public void load() {
@@ -34,6 +34,6 @@ public class HotelContainer {
         baiyoke.setRoom(baiyokeRoomList);
         hotelList.add(baiyoke);
         bangkok.setHotelList(hotelList);
-
+        hotelDB.getCityData().add(bangkok);
     }
 }
