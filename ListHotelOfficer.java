@@ -43,7 +43,7 @@ public class ListHotelOfficer {
         }
         String selectedHotelInput = ear.nextLine();
         int hotelID = Integer.parseInt(selectedHotelInput);
-        HotelPOJO selectedHotel = selectedCity.getHotelList().get(hotelID);
+        HotelPOJO selectedHotel = selectedCity.getHotelList().get(hotelID - 1);
         listRoomOfficer.call(userNameData, fullName, selectedHotel);
     }
 
