@@ -14,6 +14,7 @@ public class ListHotelOfficer {
 
     public void call(String userName, String fullName) {
         hotelContainer.load();
+        String userNameData = userName;
         System.out.println("welcome " + fullName);
         System.out.println("search a Room");
         System.out.println("- search destination");
@@ -41,6 +42,7 @@ public class ListHotelOfficer {
         String selectedHotelInput = ear.nextLine();
         int hotelID = Integer.parseInt(selectedHotelInput);
         HotelPOJO selectedHotel = selectedCity.getHotelList().get(hotelID);
+
     }
 
 }
