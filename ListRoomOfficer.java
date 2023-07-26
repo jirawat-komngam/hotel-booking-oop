@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-
-     class ListRoomOfficer {
+class ListRoomOfficer {
     private Scanner ear;
-    public void call(String userName) {
+
+    public void call(String userName, String fullName, HotelPOJO selectedHotel) {
         System.out.println("hotel : asdsa");
         System.out.println("Room");
         System.out.println("1 cheep 500");
