@@ -10,11 +10,14 @@ public class WelcomeAppOficer implements Officer {
     }
 
     public void call() {
-        System.out.println("-Agoda 1980");
-        System.out.println("1 login");
-        System.out.println("2 register");
-        String userInput = ear.nextLine();
-        dicision(userInput);
+        while (true) {
+            System.out.println("-Agoda 1980");
+            System.out.println("1 login");
+            System.out.println("2 register");
+            String userInput = ear.nextLine();
+            dicision(userInput);
+        }
+
     }
 
     public void dicision(String userword) {
