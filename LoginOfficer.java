@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class LoginOfficer implements Officer {
     private Scanner ear;
     private UserDB userDB;
+    private ListHotelOfficer listHotelOfficer;
 
-    LoginOfficer(UserDB realUserDB) {
+    LoginOfficer(UserDB realUserDB, ListHotelOfficer realListHotelOfficer) {
         ear = new Scanner(System.in);
         userDB = realUserDB;
+        listHotelOfficer = realListHotelOfficer;
     }
 
     public void call() {
