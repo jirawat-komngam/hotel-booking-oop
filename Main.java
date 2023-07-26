@@ -5,7 +5,10 @@ class program {
 
     public void app() {
         UserDB newuserDB = new UserDB(new ArrayList<>());
-        LoginOfficer newLoginOfficer = new LoginOfficer(newuserDB);
+        HotelDB realHotelDB = new HotelDB(new ArrayList<>());
+        HotelContainer hotelContainer = new HotelContainer(realHotelDB);
+        ListHotelOfficer newListHotelOfficer = new ListHotelOfficer(realHotelDB, hotelContainer);
+        LoginOfficer newLoginOfficer = new LoginOfficer(newuserDB, newListHotelOfficer);
         RegisterOfficer newRegisterOfficer = new RegisterOfficer(newuserDB);
         WelcomeAppOficer newWelcomeAppOficer = new WelcomeAppOficer(newRegisterOfficer, newLoginOfficer);
         newWelcomeAppOficer.call();
