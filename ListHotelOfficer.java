@@ -5,15 +5,18 @@ public class ListHotelOfficer {
     private Scanner ear;
     private HotelDB hotelDB;
     private HotelContainer hotelContainer;
+    private ListRoomOfficer listRoomOfficer;
 
-    ListHotelOfficer(HotelDB realHotelDB, HotelContainer realHotelContainer) {
+    ListHotelOfficer(HotelDB realHotelDB, HotelContainer realHotelContainer, ListRoomOfficer reallistRoomOfficer) {
         ear = new Scanner(System.in);
         hotelDB = realHotelDB;
         hotelContainer = realHotelContainer;
+        listRoomOfficer = reallistRoomOfficer;
     }
 
     public void call(String userName, String fullName) {
         hotelContainer.load();
+        String userNameData = userName;
         System.out.println("welcome " + fullName);
         System.out.println("search a Room");
         System.out.println("- search destination");
@@ -40,7 +43,8 @@ public class ListHotelOfficer {
         }
         String selectedHotelInput = ear.nextLine();
         int hotelID = Integer.parseInt(selectedHotelInput);
-        HotelPOJO selectedHotel = selectedCity.getHotelList().get(hotelID);
+        HotelPOJO selectedHotel = selectedCity.getHotelList().get(hotelID - 1);
+        listRoomOfficer.call(userNameData, fullName, selectedHotel);
     }
 
 }
