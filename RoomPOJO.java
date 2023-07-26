@@ -1,7 +1,9 @@
 import java.time.ZonedDateTime;
+import java.util.Map;
 
 public class RoomPOJO {
-    public RoomPOJO(String roomType, Double roomPrice, ZonedDateTime roomAvailiabledates) {
+
+    public RoomPOJO(String roomType, Double roomPrice, Map<ZonedDateTime, Boolean> roomAvailiabledates) {
         this.roomType = roomType;
         this.roomPrice = roomPrice;
         this.roomAvailiabledates = roomAvailiabledates;
@@ -9,7 +11,7 @@ public class RoomPOJO {
 
     private String roomType;
     private Double roomPrice;
-    private ZonedDateTime roomAvailiabledates;
+    private Map<ZonedDateTime, Boolean> roomAvailiabledates;
 
     public String getRoomType() {
         return roomType;
@@ -27,11 +29,12 @@ public class RoomPOJO {
         this.roomPrice = roomPrice;
     }
 
-    public ZonedDateTime getRoomAvailiabledates() {
+    public Map<ZonedDateTime, Boolean> getRoomAvailiabledates() {
         return roomAvailiabledates;
     }
 
-    public void setRoomAvailiabledates(ZonedDateTime roomAvailiabledates) {
+    public void setRoomAvailiabledates(Map<ZonedDateTime, Boolean> roomAvailiabledates) {
         this.roomAvailiabledates = roomAvailiabledates;
     }
+
 }
