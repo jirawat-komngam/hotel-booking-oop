@@ -11,12 +11,14 @@ public class ListHotelOfficer {
         hotelContainer = realHotelContainer;
     }
 
-    public void call() {
+    public void call(String userName, String fullName) {
+        System.out.println("welcome " + userName);
         System.out.println("search a Room");
         System.out.println("- search destination");
         System.out.println("- write city name");
         String cityNameInput = ear.nextLine();
         hotelContainer.load();
+        System.out.println("name " + userName);
         for (CityData eachCity : hotelDB.getCityData()) {
             if (eachCity.getCityName().containsKey(cityNameInput)) {
                 int countHotel = 1;
